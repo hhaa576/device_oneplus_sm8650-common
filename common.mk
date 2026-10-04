@@ -169,9 +169,6 @@ PRODUCT_COPY_FILES += \
 $(call soong_config_set,surfaceflinger,udfps_lib,//hardware/oplus:libudfps_extension.oplus)
 endif
 
-# GameBar Performance Overlay
-$(call inherit-product-if-exists, packages/apps/GameBar/gamebar.mk)
-
 # GPS
 ifneq ($(TARGET_IS_TABLET),true)
 PRODUCT_COPY_FILES += \
@@ -307,9 +304,6 @@ PRODUCT_PACKAGES += \
     vendor.oplus.hardware.commondcs-service \
     vendor.oplus.hardware.osense.client-service \
     vendor.oplus.hardware.performance-service
-
-# Oplus IR
-$(call inherit-product-if-exists, vendor/oneplus/ir/ir.mk)
 
 $(call soong_config_set_bool,stagefright,target_disable_thumbnail_block_model,true)
 
